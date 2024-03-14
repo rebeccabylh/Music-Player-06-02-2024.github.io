@@ -7,7 +7,7 @@ CS10 Main Project
 - [ ] Numbers for progress bar
 - [ ] Next song button
 
-      feature descriptions 
+feature descriptions 
 - [ ] Make it pink + white and with multiple flowers!
 - [ ] Nav has links to Home page, playlist page, page with credits
 - [ ] Aside has the links to the templates created
