@@ -6,3 +6,13 @@ CS10 Main Project
 - [ ] progress bar
 - [ ] Numbers for progress bar
 - [ ] Next song button
+
+      feature descriptions 
+- [ ] Make it pink + white and with multiple flowers!
+- [ ] Nav has links to Home page, playlist page, page with credits
+- [ ] Aside has the links to the templates created
+
+Document map
+- [ ] Home page
+- [ ] GUI page, when you click on a link in nav this is where you go too
+- [ ] Actual music player thingy
