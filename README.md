@@ -13,6 +13,6 @@ feature descriptions
 - [ ] Aside has the links to the templates created
 
 Document map
-- [ ] Home page
-- [ ] GUI page, when you click on a link in nav this is where you go too
-- [ ] Actual music player thingy
+- [x] Home page
+- [x] GUI page, when you click on a link in nav this is where you go too
+- [x] Actual music player thingy
