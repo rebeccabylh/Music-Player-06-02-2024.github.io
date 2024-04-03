@@ -1,18 +1,16 @@
-// () {} pause/start button
-// () {} progress bar
-// () {} next button
-// () {} numbers next to progress bar
-// () {} switch to next song 
-//
-//
 //Global Variables
 //
-void setup() {} // End Setup
+void setup() {
+  println(width, height, displayWidth, displayHeight);
+} // End Setup
 //
-void setup () {} // End Draw
+void draw () {
+} // End Draw
 //
-void setup () {} // End keyPressed
+void keyPressed () {
+} // End keyPressed
 //
-void setup () {} // End mousepressed
+void mousePressed () {
+} // End mousePressed
 //
 // End Main Program
