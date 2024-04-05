@@ -9,8 +9,8 @@ CS10 Main Project
 
 feature descriptions 
 - [ ] Make it pink + white and with multiple flowers!
-- [ ] Nav has links to Home page, playlist page, page with credits
-- [ ] Aside has the links to the templates created
+- [x] Nav has links to Home page, playlist page, page with credits
+- [x] Aside has the links to the templates created
 
 Document map
 - [x] Home page
