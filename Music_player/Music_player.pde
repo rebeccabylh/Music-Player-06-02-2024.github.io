@@ -4,6 +4,12 @@ float backgroundX ,backgroundY, backgroundWidth, backgroundHeight;
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight;
 float playButtonX, playButtonY, playButtonWidth, playButtonHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+float progressBarX, progressBarY, progressBarWidth, progressBarHeight;
+float backButtonX, backButtonY, backButtonWidth, backButtonHeight;
+float nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight;
+float playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight;
+float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
+float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
 //
 void setup() {
   //Concatenation & Inspecting Variables with Character Escapes
@@ -24,9 +30,9 @@ void setup() {
   backgroundWidth = appWidth;
   backgroundHeight = appHeight;
   albumCoverX = appWidth*18/100;
-  albumCoverY = appHeight*15/100;
-  albumCoverWidth = appWidth*64/100;
-  albumCoverHeight = appHeight*6/16;
+  albumCoverY = appHeight*18/100;
+  albumCoverWidth = appWidth*6/16;
+  albumCoverHeight = appHeight*15/100;
   playButtonX = appWidth*3.5/8;
   playButtonY = appHeight*8/9;
   playButtonWidth = appWidth*1/8;
@@ -35,6 +41,30 @@ void setup() {
   quitButtonY = appHeight*29/32;
   quitButtonWidth = appWidth*9/100;
   quitButtonHeight = appHeight*6/100;
+  progressBarX = appWidth*20/100;
+  progressBarY = appHeight*7/9;
+  progressBarWidth = appWidth*60/100;
+  progressBarHeight = appHeight*0.5/6;
+  backButtonX = appWidth*/;
+  backButtonY = appHeight*/;
+  backButtonWidth = appWidth*/;
+  backButtonHeight = appHeight*/;
+  nextButtonX  = appWidth;
+  nextButtonY  = appHeight;
+  nextButtonWidth  = appWidth;
+  nextButtonHeight  = appHeight;
+  playlistNameX  = appWidth;
+  playlistNameY  = appHeight;
+  playlistNameWidth  = appWidth;
+  playlistNameHeight  = appHeight;
+  nameOfSongX  = appWidth;
+  nameOfSongY  = appHeight;
+  nameOfSongWidth  = appWidth;
+  nameOfSongHeight  = appHeight;
+  artistNameX  = appWidth;
+  artistNameY  = appHeight;
+  artistNameWidth  = appWidth;
+  artistNameHeight  = appHeight;
   //Layout DIVs
   //rect(X ,Y, Width, Height);
   rect(backgroundX ,backgroundY, backgroundWidth, backgroundHeight);
@@ -44,6 +74,12 @@ void setup() {
   //rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
   rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+  rect(progressBarX, progressBarY, progressBarWidth, progressBarHeight);
+  rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+  rect(nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight);
+  rect(playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight);
+  rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
+  rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
 } // End Setup
 //
 void draw () {
