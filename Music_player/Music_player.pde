@@ -29,10 +29,10 @@ void setup() {
   backgroundY = appHeight*0;
   backgroundWidth = appWidth;
   backgroundHeight = appHeight;
-  albumCoverX = appWidth*18/100;
-  albumCoverY = appHeight*18/100;
-  albumCoverWidth = appWidth*6/16;
-  albumCoverHeight = appHeight*15/100;
+  albumCoverX = appWidth*3.7/17;
+  albumCoverY = appHeight*22/100;
+  albumCoverWidth = appWidth*9/16;
+  albumCoverHeight = appHeight*50/100;
   playButtonX = appWidth*3.5/8;
   playButtonY = appHeight*8/9;
   playButtonWidth = appWidth*1/8;
@@ -70,8 +70,8 @@ void setup() {
   rect(backgroundX ,backgroundY, backgroundWidth, backgroundHeight);
   int centerX = appWidth * 1/2;
   int centerY= appHeight * 1/2;
-  rect(centerX * 1/2, centerY * 1/2, appWidth *1/2, appHeight* 1/2);
-  //rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
+  //rect(centerX * 1/2, centerY * 1/2, appWidth *1/2, appHeight* 1/2);
+  rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
   rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
   rect(progressBarX, progressBarY, progressBarWidth, progressBarHeight);
