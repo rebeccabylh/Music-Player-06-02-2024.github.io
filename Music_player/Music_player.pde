@@ -12,10 +12,6 @@ float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
 float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
 //
 void setup() {
-  //Concatenation & Inspecting Variables with Character Escapes
-  println("Width: "+width+"\tHeight: "+height+"\t\tDisplay Width: "+displayWidth+"\tDisplay Height: "+displayHeight);
-  //NULL: all values are NULL until size(), arithemtic errors
-  //
   size(400, 500);
   //fullScreen();
   appWidth = width;
