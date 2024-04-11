@@ -40,7 +40,7 @@ void setup() {
   quitButtonX = appWidth*1/16;
   quitButtonY = appHeight*29/32;
   quitButtonWidth = appWidth*9/100;
-  quitButtonHeight = appHeight*6/100;
+  quitButtonHeight = appHeight*4/100;
   progressBarX = appWidth*20/100;
   progressBarY = appHeight*8.3/12;
   progressBarWidth = appWidth*60/100;
@@ -61,7 +61,7 @@ void setup() {
   nameOfSongY  = appHeight*6/7.8;
   nameOfSongWidth  = appWidth*1.5/8;
   nameOfSongHeight  = appHeight*1.5/28;
-  artistNameX  = appWidth*3.5/8;
+  artistNameX  = appWidth*3.48/8;
   artistNameY  = appHeight*6.7/8;
   artistNameWidth  = appWidth*1/8;
   artistNameHeight  = appHeight*2/80;
