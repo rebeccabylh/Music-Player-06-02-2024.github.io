@@ -84,7 +84,7 @@ void setup() {
   darkBackground = #000000;
   whiteBackground = #FFFFFF;
   whiteMode = true;
-  if ( hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
+  if (whiteMode = true && hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
   if ( hour()<9 && hour()>17 ) backgroundColour = darkBackground;
   //
 } // End Setup
