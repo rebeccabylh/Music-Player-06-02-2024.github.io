@@ -14,6 +14,7 @@ float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
 color backgroundColour;
 color darkBackground;
 color whiteBackground;
+Boolean whiteMode = false;
 //
 void setup() {
   size(400, 500);
@@ -82,6 +83,7 @@ void setup() {
   //Var Population
   darkBackground = #000000;
   whiteBackground = #FFFFFF;
+  whiteMode = true;
   if ( hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
   if ( hour()<9 && hour()>17 ) backgroundColour = darkBackground;
   //
