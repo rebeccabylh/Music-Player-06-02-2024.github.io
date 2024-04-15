@@ -11,6 +11,10 @@ float playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight;
 float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
 float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
 //
+color backgroundColour;
+color darkBackground;
+color whiteBackground;
+//
 void setup() {
   size(400, 500);
   //fullScreen();
@@ -75,9 +79,17 @@ void setup() {
   rect(playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight);
   rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
   rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
+  //Var Population
+  darkBackground = #000000;
+  whiteBackground = #FFFFFF;
+  if ( hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
+  if ( hour()<9 && hour()>17 ) backgroundColour = darkBackground;
+  //
 } // End Setup
 //
 void draw () {
+  background(backgroundColour);
+    rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
 } // End Draw
 //
 void keyPressed () {
