@@ -12,9 +12,12 @@ float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
 float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
 //
 color backgroundColour;
-color darkBackground;
-color whiteBackground;
+color darkBackground = 0;
+color whiteBackground = 255;
 Boolean whiteMode = false;
+color foregroundColour;
+color white =255;
+color yellow= #FFFF00;
 //
 void setup() {
   size(400, 500);
@@ -83,9 +86,14 @@ void setup() {
   //Var Population
   darkBackground = #000000;
   whiteBackground = #FFFFFF;
-  whiteMode = true;
-  if (whiteMode = true && hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
-  if ( hour()<9 && hour()>17 ) backgroundColour = darkBackground;
+  white = 255;
+  yellow = #FFFF00;
+  whiteMode=true;
+  if (hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
+  foregroundColour = #FFFFFF; //placeholder colours
+  if (hour()<9 && hour()>17 ) backgroundColour = darkBackground;
+  if (hour()<9 && hour()>17) foregroundColour = yellow;
+  if (hour()>=9 && hour()<=17) foregroundColour = white; //switch up code a bit
   //
 } // End Setup
 //
