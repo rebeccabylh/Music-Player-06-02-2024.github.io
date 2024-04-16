@@ -106,7 +106,10 @@ void keyPressed () {
 } // End keyPressed
 //
 void mousePressed () {
-  
+  //QUIT
+  if(mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
+    exit();
+  };
 } // End mousePressed
 //
 // End Main Program
