@@ -17,6 +17,7 @@ color whiteBackground = 255;
 Boolean whiteMode = false;
 color foregroundColour;
 color white =255;
+color black= 0;
 color yellow= #FFFF00;
 //
 void setup() {
@@ -84,13 +85,9 @@ void setup() {
   rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
   rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
   //Var Population
-  darkBackground = #000000;
-  whiteBackground = #FFFFFF;
-  white = 255;
-  yellow = #FFFF00;
   whiteMode=true;
   if (hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
-  foregroundColour = #FFFFFF; //placeholder colours
+  foregroundColour = black; //placeholder colours
   if (hour()<9 && hour()>17 ) backgroundColour = darkBackground;
   if (hour()<9 && hour()>17) foregroundColour = yellow;
   if (hour()>=9 && hour()<=17) foregroundColour = white; //switch up code a bit
@@ -99,13 +96,17 @@ void setup() {
 //
 void draw () {
   background(backgroundColour);
+  fill(foregroundColour);
     rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
 } // End Draw
 //
 void keyPressed () {
+  if (key=='Q' || key=='q') exit();
+  if (key==CODED && keyCode==UP) exit();
 } // End keyPressed
 //
 void mousePressed () {
+  
 } // End mousePressed
 //
 // End Main Program
