@@ -1,6 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
-float backgroundX ,backgroundY, backgroundWidth, backgroundHeight;
+float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight;
 float playButtonX, playButtonY, playButtonWidth, playButtonHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
@@ -18,13 +18,13 @@ Boolean whiteMode = false;
 color foregroundColour;
 color white =255;
 color black= 0;
-color yellow= #FFFF00;
+color pink = #FFEDF8;
 //
 void setup() {
-  size(400, 500);
-  //fullScreen();
-  appWidth = width;
-  appHeight = height;
+  //size(400, 500);
+  fullScreen();
+  appWidth = displayWidth;
+  appHeight = displayHeight;
   //Landscape is HARDCODED
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
   println( displayInstructions);
@@ -71,7 +71,7 @@ void setup() {
   artistNameWidth  = appWidth*1/8;
   artistNameHeight  = appHeight*2/80;
   //Layout DIVs
-  rect(backgroundX ,backgroundY, backgroundWidth, backgroundHeight);
+  rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
   //int centerX = appWidth * 1/2;
   //int centerY= appHeight * 1/2;
   //rect(centerX * 1/2, centerY * 1/2, appWidth *1/2, appHeight* 1/2);
@@ -85,11 +85,15 @@ void setup() {
   rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
   rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
   //Var Population
-  whiteMode=true;
-  if (hour()>=9 && hour()<=17 ) backgroundColour = whiteBackground;
-  foregroundColour = black; //placeholder colours
-  if (hour()<9 && hour()>17 ) backgroundColour = darkBackground;
-  if (hour()<9 && hour()>17) foregroundColour = yellow;
+  if (whiteMode==true && hour()>=9 && hour()<=17) {
+    backgroundColour = whiteBackground;
+    foregroundColour = black;
+  } else {
+    backgroundColour = darkBackground;
+    foregroundColour = pink;
+    if (hour()>=9 && hour()<=17 ) foregroundColour = white;
+  }
+  if (hour()<9 && hour()>17) foregroundColour = pink;
   if (hour()>=9 && hour()<=17) foregroundColour = white; //switch up code a bit
   //
 } // End Setup
@@ -97,19 +101,29 @@ void setup() {
 void draw () {
   background(backgroundColour);
   fill(foregroundColour);
-    rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+  //
+  //fill(white);
+  //if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) fill(pink);
+  if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
+    fill(pink);
+  } else {
+    fill(white);
+  }
+  rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+  fill(foregroundColour);
 } // End Draw
 //
 void keyPressed () {
   if (key=='Q' || key=='q') exit();
-  if (key==CODED && keyCode==UP) exit();
+  if (key==CODED && keyCode==ESC) exit();
+  //
+  if (key=='W' || key=='w');
 } // End keyPressed
 //
 void mousePressed () {
-  //QUIT
-  if(mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
+  if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
     exit();
-  };
+  }
 } // End mousePressed
 //
 // End Main Program
