@@ -19,6 +19,7 @@ color foregroundColour;
 color white =255;
 color black= 0;
 color pink = #FFEDF8;
+color darkPink = #E3B5D2;
 //
 void setup() {
   //size(400, 500);
@@ -90,10 +91,10 @@ void setup() {
     foregroundColour = black;
   } else {
     backgroundColour = darkBackground;
-    foregroundColour = pink;
+    foregroundColour = darkPink;
     if (hour()>=9 && hour()<=17 ) foregroundColour = white;
   }
-  if (hour()<9 && hour()>17) foregroundColour = pink;
+  if (hour()<9 && hour()>17) foregroundColour = darkPink;
   if (hour()>=9 && hour()<=17) foregroundColour = white; //switch up code a bit
   //
 } // End Setup
@@ -104,13 +105,15 @@ void draw () {
   //
   //fill(white);
   //if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) fill(pink);
-  if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
-    fill(pink);
-  } else {
-    fill(white);
-  }
+  fill(pink);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
-  fill(foregroundColour);
+  if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
+    fill(darkPink);
+    rect(quitButtonX+quitButtonWidth*1/12, quitButtonY+quitButtonHeight*0.5/6, quitButtonWidth*7.5/8, quitButtonHeight);
+    fill(foregroundColour);
+  } else {
+    fill(pink);
+  }
 } // End Draw
 //
 void keyPressed () {
