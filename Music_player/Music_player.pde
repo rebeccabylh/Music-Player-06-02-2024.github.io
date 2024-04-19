@@ -20,6 +20,8 @@ color white =255;
 color black= 0;
 color pink = #FFEDF8;
 color darkPink = #E3B5D2;
+int size;
+PFont generalFont;
 //
 void setup() {
   //size(400, 500);
@@ -29,6 +31,11 @@ void setup() {
   //Landscape is HARDCODED
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
   println( displayInstructions);
+  //
+  String[] fontList = PFont.list();
+printArray(fontList);
+size= 40;
+generalFont = createFont("Consolas", size);
   //
   //Populate
   backgroundX = appWidth*0;
@@ -114,6 +121,11 @@ void draw () {
   } else {
     fill(pink);
   }
+  fill(black);
+textAlign(CENTER, CENTER); 
+size = 45;
+textFont(generalFont, size);
+text(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
 } // End Draw
 //
 void keyPressed () {
