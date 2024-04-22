@@ -127,6 +127,30 @@ size = 45;
 textFont(generalFont, size);
 text(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
 //
+fill(pink);
+rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
+//
+fill(pink);
+rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
+//
+fill(pink);
+rect(progressBarX, progressBarY, progressBarWidth, progressBarHeight);
+//
+fill(pink);
+rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+//
+fill(pink);
+rect(nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight);
+//
+fill(pink);
+rect(playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight);
+//
+fill(pink);
+rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
+//
+fill(pink);
+rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
+//
 //fill(black);
 //textAlign(CENTER, CENTER); 
 //size = 45;                        //don't worry much about this one yet
