@@ -126,6 +126,12 @@ textAlign(CENTER, CENTER);
 size = 45;
 textFont(generalFont, size);
 text(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+//
+//fill(black);
+//textAlign(CENTER, CENTER); 
+//size = 45;                        //don't worry much about this one yet
+//textFont(generalFont, size);
+//text(footer, footerX, footerY, footerWidth, footerHeight);
 } // End Draw
 //
 void keyPressed () {
