@@ -1,4 +1,8 @@
 //Global Variables
+Minim minim;           //add later
+AudioPlayer playList1;
+AudioPlayer soundEffects1;
+//
 int appWidth, appHeight;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight;
@@ -22,6 +26,7 @@ color pink = #FFEDF8;
 color darkPink = #E3B5D2;
 int size;
 PFont generalFont;
+String quit= "Leave";
 //
 void setup() {
   //size(400, 500);
@@ -31,6 +36,16 @@ void setup() {
   //Landscape is HARDCODED
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
   println( displayInstructions);
+  //
+  minim = new minim (this);
+  String extension = ".mp3";
+  String quitButtonSound = "Daytime Forrest Bonfire";
+  String pathwaySoundEffects = "../Songs";
+  println(pathwaySoundEffects+quitButtonSound+extension);
+  String path = sketchPath(pathwaySoundEffects+quitButtonSound+extension);
+  println(path);
+  //soundEffects1 = minim.loadFile(path);
+  //playList1 = minim.loadFile(path);
   //
   String[] fontList = PFont.list();
 printArray(fontList);
@@ -103,7 +118,10 @@ generalFont = createFont("Consolas", size);
   }
   if (hour()<9 && hour()>17) foregroundColour = darkPink;
   if (hour()>=9 && hour()<=17) foregroundColour = white; //switch up code a bit
-  //
+}
+// 
+//soundEffects1.loop(1);
+//
 } // End Setup
 //
 void draw () {
@@ -150,24 +168,34 @@ rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
 //
 fill(pink);
 rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
-//
-//fill(black);
-//textAlign(CENTER, CENTER); 
-//size = 45;                        //don't worry much about this one yet
-//textFont(generalFont, size);
-//text(footer, footerX, footerY, footerWidth, footerHeight);
+/*
+fill(black);
+textAlign(CENTER, CENTER); 
+size = 45;                        
+textFont(generalFont, size);
+text(footer, footerX, footerY, footerWidth, footerHeight);
+*/
 } // End Draw
 //
 void keyPressed () {
   if (key=='Q' || key=='q') exit();
   if (key==CODED && keyCode==ESC) exit();
   //
-  if (key=='W' || key=='w');
+  if (key=='W' || key=='w'); //playbutton
+  //
+  if (key == 'A' || key == 'a'); //back
+  //
+  if (key == 'L' || key == 'l'); //next
+  
+   //soundEffects1.loop(1);
+   
 } // End keyPressed
 //
 void mousePressed () {
   if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
-    exit();
+     soundEffects1.loop(1);
+     delay();
+     exit();
   }
 } // End mousePressed
 //
