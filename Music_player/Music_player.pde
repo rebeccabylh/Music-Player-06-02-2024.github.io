@@ -1,5 +1,12 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //Global Variables
-Minim minim;           
+Minim minim;
 AudioPlayer playList1;
 AudioPlayer soundEffects1;
 //
@@ -37,7 +44,7 @@ void setup() {
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
   println( displayInstructions);
   //
-  minim = new minim (this);
+  minim = new Minim (this);
   String extension = ".mp3";
   String quitButtonSound = "Daytime Forrest Bonfire";
   String pathwaySoundEffects = "../Songs";
@@ -48,9 +55,9 @@ void setup() {
   //playList1 = minim.loadFile(path);
   //
   String[] fontList = PFont.list();
-printArray(fontList);
-size= 40;
-generalFont = createFont("Consolas", size);
+  printArray(fontList);
+  size= 40;
+  generalFont = createFont("Consolas", size);
   //
   //Populate
   backgroundX = appWidth*0;
@@ -136,107 +143,107 @@ void draw () {
     fill(pink);
   }
   fill(black);
-textAlign(CENTER, CENTER); 
-size = 45;
-textFont(generalFont, size);
-text(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
-//
-fill(pink);
-rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
+  textAlign(CENTER, CENTER);
+  size = 45;
+  textFont(generalFont, size);
+  text(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+  //
+  fill(pink);
+  rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
   /*if (mouseX> albumCoverX && mouseX<albumCoverX+albumCoverWidth && mouseY>albumCoverY && mouseY<albumCoverY+albumCoverHeight) {
-    fill(white);
-    rect(albumCoverX+albumCoverWidth*1/12, albumCoverY+quitButtonHeight*0.5/6, albumCoverWidth*7.5/8, qalbumCoverHeight);   //Change up variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-//
-fill(pink);
-rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
+   fill(white);
+   rect(albumCoverX+albumCoverWidth*1/12, albumCoverY+quitButtonHeight*0.5/6, albumCoverWidth*7.5/8, qalbumCoverHeight);   //Change up variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  //
+  fill(pink);
+  rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
   /*if (mouseX> playButtonX && mouseX<playButtonX+playButtonWidth && mouseY>playButtonY && mouseY<playButtonY+playButtonHeight) {
-    fill(white);
-    rect(playButtonX+playButtonWidth*1/12, playButtonY+playButtonHeight*0.5/6, playButtonWidth*7.5/8, playButtonHeight);  //Change variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-//
-fill(pink);
-rect(progressBarX, progressBarY, progressBarWidth, progressBarHeight);
+   fill(white);
+   rect(playButtonX+playButtonWidth*1/12, playButtonY+playButtonHeight*0.5/6, playButtonWidth*7.5/8, playButtonHeight);  //Change variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  //
+  fill(pink);
+  rect(progressBarX, progressBarY, progressBarWidth, progressBarHeight);
   /*if (mouseX> progressBarX && mouseX<progressBarX+progressBarWidth && mouseY>progressBarY && mouseY<progressBarY+progressBarHeight) {
-    fill(white);
-    rect(progressBarX+progressBarWidth*1/12, progressBarY+progressBarHeight*0.5/6, progressBarWidth*7.5/8, progressBarHeight); //Change variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-//
-fill(pink);
-rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+   fill(white);
+   rect(progressBarX+progressBarWidth*1/12, progressBarY+progressBarHeight*0.5/6, progressBarWidth*7.5/8, progressBarHeight); //Change variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  //
+  fill(pink);
+  rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
   /*if (mouseX> backButtonX&& mouseX<backButtonX+backButtonWidth && mouseY>backButtonY && mouseY<backButtonY+backButtonHeight) {
-    fill(darkPink);
-    rect(backButtonX+backButtonWidth*1/12, backButtonY+backButtonHeight*0.5/6, backButtonWidth*7.5/8, backButtonHeight); //Change variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-//
-fill(pink);
-rect(nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight);
+   fill(darkPink);
+   rect(backButtonX+backButtonWidth*1/12, backButtonY+backButtonHeight*0.5/6, backButtonWidth*7.5/8, backButtonHeight); //Change variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  //
+  fill(pink);
+  rect(nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight);
   /*if (mouseX> nextButtonX && mouseX<nextButtonX+nextButtonWidth && mouseY>nextButtonY && mouseY<nextButtonY+nextButtonHeight) {
-    fill(darkPink);
-    rect(nextButtonX+nextButtonWidth*1/12, nextButtonY+nextButtonHeight*0.5/6, nextButtonWidth*7.5/8, nextButtonHeight); //Change variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-//
-fill(pink);
-rect(playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight);
+   fill(darkPink);
+   rect(nextButtonX+nextButtonWidth*1/12, nextButtonY+nextButtonHeight*0.5/6, nextButtonWidth*7.5/8, nextButtonHeight); //Change variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  //
+  fill(pink);
+  rect(playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight);
   /*if (mouseX> playlistNameX && mouseX<playlistNameX+playlistNameWidth && mouseY>playlistNameY && mouseY<playlistNameY+ playlistNameHeight) {
-    fill(darkPink);
-    rect(playlistNameX+playlistNameWidth*1/12, playlistNameY+ playlistNameHeight*0.5/6, playlistNameWidth*7.5/8,  playlistNameHeight); //Change variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-//
-fill(pink);
-rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
+   fill(darkPink);
+   rect(playlistNameX+playlistNameWidth*1/12, playlistNameY+ playlistNameHeight*0.5/6, playlistNameWidth*7.5/8,  playlistNameHeight); //Change variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  //
+  fill(pink);
+  rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
   /*if (mouseX> nameOfSongX && mouseX<nameOfSongX+nameOfSongWidth && mouseY>nameOfSongY && mouseY<nameOfSongY+nameOfSongHeight) {
-    fill(darkPink);
-    rect(nameOfSongX+nameOfSongWidth*1/12, nameOfSongY+nameOfSongHeight*0.5/6, nameOfSongWidth*7.5/8, nameOfSongHeight); //Change variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-//
-fill(pink);
-rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
+   fill(darkPink);
+   rect(nameOfSongX+nameOfSongWidth*1/12, nameOfSongY+nameOfSongHeight*0.5/6, nameOfSongWidth*7.5/8, nameOfSongHeight); //Change variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  //
+  fill(pink);
+  rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
   /*if (mouseX> artistNameX && mouseX<artistNameX+artistNameWidth && mouseY>artistNameY && mouseY<artistNameY+artistNameHeight) {
-    fill(darkPink);
-    rect(artistNameX+artistNameWidth*1/12, artistNameY+artistNameHeight*0.5/6, artistNameWidth*7.5/8, artistNameHeight); //Change variables later
-    fill(foregroundColour);
-  } else {
-    fill(pink);
-*/
-/*
+   fill(darkPink);
+   rect(artistNameX+artistNameWidth*1/12, artistNameY+artistNameHeight*0.5/6, artistNameWidth*7.5/8, artistNameHeight); //Change variables later
+   fill(foregroundColour);
+   } else {
+   fill(pink);
+   */
+  /*
 fill(black);
-textAlign(CENTER, CENTER); 
-size = 45;                        
-textFont(generalFont, size);
-text(footer, footerX, footerY, footerWidth, footerHeight);
-*/
+   textAlign(CENTER, CENTER);
+   size = 45;
+   textFont(generalFont, size);
+   text(footer, footerX, footerY, footerWidth, footerHeight);
+   */
 } // End Draw
 //
 void keyPressed () {
   if (key=='Q' || key=='q') exit();
   {
-  soundeffect_1();
+    //soundeffect_1();
   }
   if (key==CODED && keyCode==ESC) exit();
   {
-  soundeffect_1();
+    //soundeffect_1();
   }
   //
   //if (key=='W' || key=='w'); //playbutton
@@ -244,11 +251,11 @@ void keyPressed () {
   //if (key == 'A' || key == 'a'); //back
   //
   //if (key == 'L' || key == 'l'); //next
-   
 } // End keyPressed
 //
 void mousePressed () {
-  if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight)                     
-// End mousePressed                                     
-//      
+  if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
+  }
+} // End mousePressed
+//
 // End Main Program
