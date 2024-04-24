@@ -1,5 +1,5 @@
 //Global Variables
-Minim minim;           //add later
+Minim minim;           
 AudioPlayer playList1;
 AudioPlayer soundEffects1;
 //
@@ -26,7 +26,7 @@ color pink = #FFEDF8;
 color darkPink = #E3B5D2;
 int size;
 PFont generalFont;
-String quit= "Leave";
+//String quit= "Leave";
 //
 void setup() {
   //size(400, 500);
