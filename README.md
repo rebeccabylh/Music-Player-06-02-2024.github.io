@@ -2,10 +2,10 @@
 CS10 Main Project
 
 # to do list 
-- [ ] Pause/start button
-- [ ] progress bar
-- [ ] Numbers for progress bar
-- [ ] Next song button
+- [x] Pause/start button
+- [x] progress bar
+- [x] Numbers for progress bar
+- [x] Next song button
 
 feature descriptions 
 - [ ] Make it pink + white and with multiple flowers!
