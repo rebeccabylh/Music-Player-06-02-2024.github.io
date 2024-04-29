@@ -1,3 +1,4 @@
+//For minim
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -124,15 +125,13 @@ void setup() {
     if (hour()>=9 && hour()<=17 ) foregroundColour = white;
   }
   if (hour()<9 && hour()>17) foregroundColour = darkPink;
-  if (hour()>=9 && hour()<=17) foregroundColour = white; //switch up code a bit
+  if (hour()>=9 && hour()<=17) foregroundColour = white;
 } // End Setup
 //
 void draw () {
   background(backgroundColour);
   fill(foregroundColour);
   //
-  //fill(white);
-  //if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) fill(pink);
   fill(pink);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
   if (mouseX> quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {
@@ -226,13 +225,6 @@ void draw () {
    fill(foregroundColour);
    } else {
    fill(pink);
-   */
-  /*
-fill(black);
-   textAlign(CENTER, CENTER);
-   size = 45;
-   textFont(generalFont, size);
-   text(footer, footerX, footerY, footerWidth, footerHeight);
    */
 } // End Draw
 //
