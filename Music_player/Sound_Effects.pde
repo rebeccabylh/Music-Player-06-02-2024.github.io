@@ -5,4 +5,4 @@
      delay(timfeForSoundEffect1);
      exit();
 } //end soundeffect_1()
-/\*/
+*/
