@@ -20,6 +20,7 @@ void setup() {
   String extension = ".jpg";
   String pathway = "";
   //String landscape = "";
+  //String path = ;
   backgroundImage = loadImage(""); 
   //
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
