@@ -230,19 +230,8 @@ void draw () {
 //
 void keyPressed () {
   if (key=='Q' || key=='q') exit();
-  {
-    //soundeffect_1();
-  }
+
   if (key==CODED && keyCode==ESC) exit();
-  {
-    //soundeffect_1();
-  }
-  //
-  //if (key=='W' || key=='w'); //playbutton
-  //
-  //if (key == 'A' || key == 'a'); //back
-  //
-  //if (key == 'L' || key == 'l'); //next
 } // End keyPressed
 //
 void mousePressed () {
