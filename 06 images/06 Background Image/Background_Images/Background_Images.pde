@@ -21,7 +21,7 @@ void setup() {
   String pathway = "";
   //String landscape = "";
   //String path = ;
-  backgroundImage = loadImage(""); 
+  //backgroundImage = loadImage(""); 
   //
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
 } //end setup
