@@ -5,6 +5,7 @@ float appHeight;
 int displayWidth;
 int displayHeight;
 PImage backgroundImage;
+boolean lightMode = false, dayMode = false, nightMode = false;
 //
 void setup() {
   fullScreen();
@@ -16,24 +17,37 @@ void setup() {
   albumCoverWidth = appWidth-1;
   albumCoverHeight = appHeight-1;
   //
-  String backgroundImage = "";
+  String lilyOfTheValley = "gettyimages-550196925";
+  String backgroundImageName = "lilyOfTheValley";
   String extension = ".jpg";
-  String pathway = "";
-  //String landscape = "";
-  //String path = ;
-  //backgroundImage = loadImage(""); 
+  String pathway = "../../../Images/";
+  String portrait = "portrait/";
+  String path = pathway + portrait + backgroundImageName + extension;
+  backgroundImage = loadImage(path);
   //
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
 } //end setup
 //
 void draw() {
   image(backgroundImage, albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
+  //
+  println(lightMode);
 } //end draw
 //
 void mousePressed() {
 } //end mousepressed
 //
 void keyPressed() {
-} //end keypressed
+  if (key=='W' || key=='w') {
+    if (lightMode == false) {
+      lightMode = true;
+    } else {
+      lightMode = false;
+    }
+  }
+  //if () {
+  }
+  //if () {}
+//} //end keypressed
 //
 //end main program
