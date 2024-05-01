@@ -5,7 +5,8 @@ float appHeight;
 int displayWidth;
 int displayHeight;
 PImage backgroundImage;
-boolean lightMode = false, dayMode = false, nightMode = false;
+boolean lightMode = true, dayMode = false, nightMode = false;
+int brightness = 255;
 //
 void setup() {
   fullScreen();
@@ -21,14 +22,20 @@ void setup() {
   String backgroundImageName = "lilyOfTheValley";
   String extension = ".jpg";
   String pathway = "../../../Images/";
-  String portrait = "portrait/";
-  String path = pathway + portrait + backgroundImageName + extension;
+  String path = pathway + backgroundImageName + extension;
   backgroundImage = loadImage(path);
   //
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
 } //end setup
 //
 void draw() {
+  background (255);
+  if (lightMode == true ) {
+    brightness = 255;
+  } else {
+    brightness = 100;
+  }
+  tint(255, 200);
   image(backgroundImage, albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
   //
   println(lightMode);
@@ -46,8 +53,8 @@ void keyPressed() {
     }
   }
   //if () {
-  }
-  //if () {}
+}
+//if () {}
 //} //end keypressed
 //
 //end main program
