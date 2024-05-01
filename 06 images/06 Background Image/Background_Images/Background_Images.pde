@@ -18,8 +18,8 @@ void setup() {
   albumCoverWidth = appWidth-1;
   albumCoverHeight = appHeight-1;
   //
-  String lilyOfTheValley = "gettyimages-550196925";
-  String backgroundImageName = "lilyOfTheValley";
+  String lilyofthevalley = "gettyimages-550196925";
+  String backgroundImageName = "lilyofthevalley";
   String extension = ".jpg";
   String pathway = "../../../Images/";
   String path = pathway + backgroundImageName + extension;
