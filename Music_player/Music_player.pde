@@ -36,7 +36,7 @@ void setup() {
   //size();
   fullScreen();
   appWidth = displayWidth;
-  appHeight = displayHeight;
+  appHeight = displayHeight;     
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
   println( displayInstructions);
   //
