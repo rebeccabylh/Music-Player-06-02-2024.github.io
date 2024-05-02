@@ -34,7 +34,7 @@ color pink = #FFEDF8;
 color darkPink = #E3B5D2;
 int size;
 PFont generalFont;
-//String quit= "Leave";
+String quit= "Leave";
 //
 void setup() {
   //size(400, 500);
@@ -63,8 +63,8 @@ void setup() {
   //Populate
   backgroundX = appWidth*0;
   backgroundY = appHeight*0;
-  backgroundWidth = appWidth;
-  backgroundHeight = appHeight;
+  backgroundWidth = appWidth-1;
+  backgroundHeight = appHeight-1;
   albumCoverX = appWidth*3.7/17;
   albumCoverY = appHeight*22/100;
   albumCoverWidth = appWidth*9/16;
@@ -129,7 +129,7 @@ void setup() {
 } // End Setup
 //
 void draw () {
-  background(backgroundColour);
+  background(backgroundColour);  //I don't want a background image lol
   fill(foregroundColour);
   //
   fill(pink);
@@ -232,6 +232,8 @@ void keyPressed () {
   if (key=='Q' || key=='q') exit();
 
   if (key==CODED && keyCode==ESC) exit();
+  
+  //if (key == 'W' || key == 'w'); //Might not even need this 
 } // End keyPressed
 //
 void mousePressed () {

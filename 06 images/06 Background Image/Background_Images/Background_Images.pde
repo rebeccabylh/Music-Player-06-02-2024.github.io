@@ -1,4 +1,4 @@
-//Golbal variables
+//Global variables
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight;
 float appWidth;
 float appHeight;
@@ -18,7 +18,7 @@ void setup() {
   albumCoverWidth = appWidth-1;
   albumCoverHeight = appHeight-1;
   //
-  String lilyofthevalley = "gettyimages-550196925";
+  //String lilyofthevalley = "gettyimages-550196925"; //fix later
   String backgroundImageName = "lilyofthevalley";
   String extension = ".jpg";
   String pathway = "../../../Images/";
