@@ -33,15 +33,14 @@ PFont generalFont;
 String quit= "Leave";
 //
 void setup() {
-  //size(400, 500);
+  //size();
   fullScreen();
   appWidth = displayWidth;
   appHeight = displayHeight;
-  //Landscape is HARDCODED
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
   println( displayInstructions);
   //
-  minim = new Minim (this);
+  //minim = new Minim (this);
   String extension = ".mp3";
   String quitButtonSound = "Daytime Forrest Bonfire";
   String pathwaySoundEffects = "../Songs";
