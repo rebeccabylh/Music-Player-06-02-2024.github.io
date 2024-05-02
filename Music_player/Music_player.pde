@@ -6,11 +6,12 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
-//Global Variables
+
+/*//Global Variables
 Minim minim;
 AudioPlayer playList1;
 AudioPlayer soundEffects1;
-//
+*/ //
 int appWidth, appHeight;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight;
@@ -23,15 +24,10 @@ float playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight;
 float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
 float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
 //
-color backgroundColour;
-color darkBackground = 0;
-color whiteBackground = 255;
+color backgroundColour, whiteBackground = 255, darkBackground = 0;
 Boolean whiteMode = false;
 color foregroundColour;
-color white =255;
-color black= 0;
-color pink = #FFEDF8;
-color darkPink = #E3B5D2;
+color white =255, darkPink = #E3B5D2, pink = #FFEDF8, black= 0;
 int size;
 PFont generalFont;
 String quit= "Leave";
@@ -230,9 +226,9 @@ void draw () {
 //
 void keyPressed () {
   if (key=='Q' || key=='q') exit();
-
+  //
   if (key==CODED && keyCode==ESC) exit();
-  
+  //
   //if (key == 'W' || key == 'w'); //Might not even need this 
 } // End keyPressed
 //
