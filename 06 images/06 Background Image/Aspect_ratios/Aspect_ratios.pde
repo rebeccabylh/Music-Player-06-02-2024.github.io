@@ -7,7 +7,11 @@ void setup () {
   fullScreen ();
   appWidth = displayWidth;
   appHeight = displayHeight;
-  
+  //
+  albumCoverX = appWidth;
+  albumCoverY = appHeight;
+  albumCoverWidth = appWidth;
+  albumCoverHeight = appHeight;
 }
 //end setup
 //
