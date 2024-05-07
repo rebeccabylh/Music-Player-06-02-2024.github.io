@@ -1,6 +1,7 @@
 //Global varaibles
 int appWidth, appHeight;
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight,albumCoverWidthAdjusted, albumCoverHeightAdjusted;
+Float albumCoverLEFT, albumCoverCENTERED, albumCoverRight;
 PImage albumCoverImage;
 //
 void setup () {
