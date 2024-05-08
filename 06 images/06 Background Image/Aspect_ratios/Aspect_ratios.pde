@@ -9,11 +9,6 @@ void setup () {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
-  albumCoverX = appWidth;
-  albumCoverY = appHeight;
-  albumCoverWidth = appWidth;
-  albumCoverHeight = appHeight;
-  //
   albumCoverX = appWidth*3.7/17;
   albumCoverY = appHeight*22/100;
   albumCoverWidth = appWidth*9/16;

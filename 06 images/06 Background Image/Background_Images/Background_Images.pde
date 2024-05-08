@@ -5,8 +5,12 @@ float appHeight;
 int displayWidth;
 int displayHeight;
 PImage backgroundImage;
+String backgroundImageName;
 boolean lightMode = true, dayMode = false, nightMode = false;
 int brightness = 255;
+String pathway = "../../../Images/";
+String extension = ".jpg";
+String path;
 //
 void setup() {
   fullScreen();
@@ -18,10 +22,8 @@ void setup() {
   albumCoverWidth = appWidth-1;
   albumCoverHeight = appHeight-1;
   //
-  //String lilyofthevalley = "gettyimages-550196925"; //fix later
-  String backgroundImageName = "lilyofthevalley";
-  String extension = ".jpg";
-  String pathway = "../../../Images/";
+  //String lilyOfTheValley = "gettyimages-550196925"; //???
+  String backgroundImageName = "lilyOfTheValley";
   String path = pathway + backgroundImageName + extension;
   backgroundImage = loadImage(path);
   //
@@ -31,9 +33,9 @@ void setup() {
 void draw() {
   background (255);
   if (lightMode == true ) {
-    brightness = 255;
-  } else {
-    brightness = 100;
+  backgroundImageName = "lilyofthevalley";
+  path = pathway + backgroundImageName + extension;
+  backgroundImage = loadImage(path);
   }
   tint(255, 200);
   image(backgroundImage, albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);

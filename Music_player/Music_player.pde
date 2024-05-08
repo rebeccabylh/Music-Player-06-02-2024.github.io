@@ -7,11 +7,11 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 
-/*//Global Variables
+//Global Variables
 Minim minim;
 AudioPlayer playList1;
 AudioPlayer soundEffects1;
-*/ //
+//
 int appWidth, appHeight;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight;
@@ -23,6 +23,8 @@ float nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight;
 float playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight;
 float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
 float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
+PImage albumCoverImage;
+Float albumCoverWidthAdjusted, albumCoverHeightAdjusted;
 //
 color backgroundColour, whiteBackground = 255, darkBackground = 0;
 Boolean whiteMode = false;
@@ -40,7 +42,7 @@ void setup() {
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
   println( displayInstructions);
   //
-  //minim = new Minim (this);
+  minim = new Minim (this);
   String extension = ".mp3";
   String quitButtonSound = "Daytime Forrest Bonfire";
   String pathwaySoundEffects = "../Songs";
@@ -49,6 +51,26 @@ void setup() {
   println(path);
   //soundEffects1 = minim.loadFile(path);
   //playList1 = minim.loadFile(path);
+  //
+  String lilyOfTheValley = "gettyimages-550196925";
+  String extensionJPG = ".jpg";
+  String pathway = "../../../Images/";
+  String albumCoverImagePath = pathway + lilyOfTheValley + extensionJPG;
+  albumCoverImage = loadImage(albumCoverImagePath);
+  //
+    Float smallerAlbumCoverDimension = (albumCoverWidth < albumCoverHeight) ? albumCoverWidth : albumCoverHeight;
+  Float albumCoverImageWidthPixel = 700.0;
+  Float albumCoverImageHeightPixel = 500.0;
+  Float albumCoverAspectRatio = albumCoverImageWidthPixel/albumCoverImageHeightPixel;
+  Float largerAlbumCoverDimension = smallerAlbumCoverDimension*albumCoverAspectRatio;
+  if ( albumCoverWidth < largerAlbumCoverDimension) {
+    while (albumCoverWidth <largerAlbumCoverDimension) {
+    largerAlbumCoverDimension -= 1;
+    smallerAlbumCoverDimension -=1;
+    }
+  };
+albumCoverWidthAdjusted = largerAlbumCoverDimension;
+albumCoverHeightAdjusted = smallerAlbumCoverDimension;
   //
   String[] fontList = PFont.list();
   printArray(fontList);
@@ -144,13 +166,7 @@ void draw () {
   //
   fill(pink);
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
-  /*if (mouseX> albumCoverX && mouseX<albumCoverX+albumCoverWidth && mouseY>albumCoverY && mouseY<albumCoverY+albumCoverHeight) {
-   fill(white);
-   rect(albumCoverX+albumCoverWidth*1/12, albumCoverY+quitButtonHeight*0.5/6, albumCoverWidth*7.5/8, qalbumCoverHeight);   //Change up variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
+  image( albumCoverImage, albumCoverX, albumCoverY, albumCoverWidthAdjusted, albumCoverHeightAdjusted);
   //
   fill(pink);
   rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
@@ -227,8 +243,6 @@ void keyPressed () {
   if (key=='Q' || key=='q') exit();
   //
   if (key==CODED && keyCode==ESC) exit();
-  //
-  //if (key == 'W' || key == 'w'); //Might not even need this 
 } // End keyPressed
 //
 void mousePressed () {
