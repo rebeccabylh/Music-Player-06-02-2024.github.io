@@ -23,8 +23,8 @@ float nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight;
 float playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight;
 float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
 float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
-PImage albumCoverImage;
-Float albumCoverWidthAdjusted, albumCoverHeightAdjusted;
+//PImage albumCoverImage;
+//Float albumCoverWidthAdjusted, albumCoverHeightAdjusted;
 //
 color backgroundColour, whiteBackground = 255, darkBackground = 0;
 Boolean whiteMode = false;
@@ -52,13 +52,14 @@ void setup() {
   //soundEffects1 = minim.loadFile(path);
   //playList1 = minim.loadFile(path);
   //
+/*
   String lilyOfTheValley = "gettyimages-550196925";
   String extensionJPG = ".jpg";
   String pathway = "../../../Images/";
   String albumCoverImagePath = pathway + lilyOfTheValley + extensionJPG;
   albumCoverImage = loadImage(albumCoverImagePath);
   //
-    Float smallerAlbumCoverDimension = (albumCoverWidth < albumCoverHeight) ? albumCoverWidth : albumCoverHeight;
+  Float smallerAlbumCoverDimension = (albumCoverWidth < albumCoverHeight) ? albumCoverWidth : albumCoverHeight;
   Float albumCoverImageWidthPixel = 700.0;
   Float albumCoverImageHeightPixel = 500.0;
   Float albumCoverAspectRatio = albumCoverImageWidthPixel/albumCoverImageHeightPixel;
@@ -71,6 +72,7 @@ void setup() {
   };
 albumCoverWidthAdjusted = largerAlbumCoverDimension;
 albumCoverHeightAdjusted = smallerAlbumCoverDimension;
+*/
   //
   String[] fontList = PFont.list();
   printArray(fontList);
@@ -166,7 +168,6 @@ void draw () {
   //
   fill(pink);
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
-  image( albumCoverImage, albumCoverX, albumCoverY, albumCoverWidthAdjusted, albumCoverHeightAdjusted);
   //
   fill(pink);
   rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
