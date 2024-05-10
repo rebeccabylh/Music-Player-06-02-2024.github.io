@@ -5,9 +5,7 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-
-
-//Global Variables
+//
 Minim minim;
 AudioPlayer playList1;
 AudioPlayer soundEffects1;
@@ -23,16 +21,20 @@ float nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight;
 float playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight;
 float nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight;
 float artistNameX, artistNameY, artistNameWidth, artistNameHeight;
-//PImage albumCoverImage;
-//Float albumCoverWidthAdjusted, albumCoverHeightAdjusted;
 //
-color backgroundColour, whiteBackground = 255, darkBackground = 0;
-Boolean whiteMode = false;
-color foregroundColour;
-color white =255, darkPink = #E3B5D2, pink = #FFEDF8, black= 0;
 int size;
 PFont generalFont;
-String quit= "Leave";
+String quit= "CLOSE";
+//
+Boolean whiteMode = false;
+color white =255, darkPink = #E3B5D2, pink = #FFEDF8, black= 0;
+//
+color foregroundColour;
+color backgroundColour, whiteBackground = 255, darkBackground = 0;
+//
+Float albumCoverLEFT, albumCoverCENTERED, albumCoverRight;
+PImage albumCoverImage;
+Float albumCoverWidthAdjusted, albumCoverHeightAdjusted;
 //
 void setup() {
   //size();
@@ -49,19 +51,22 @@ void setup() {
   println(pathwaySoundEffects+quitButtonSound+extension);
   String path = sketchPath(pathwaySoundEffects+quitButtonSound+extension);
   println(path);
-  //soundEffects1 = minim.loadFile(path);
+  soundEffects1 = minim.loadFile(path);
   //playList1 = minim.loadFile(path);
   //
-/*
+  //printArray(fontList);
+  size= (appWidth > appHeight) ? appHeight : appWidth;
+  generalFont = createFont("Consolas", size);
+  //
   String lilyOfTheValley = "gettyimages-550196925";
   String extensionJPG = ".jpg";
-  String pathway = "../../../Images/";
+  String pathway = "../Images/";
   String albumCoverImagePath = pathway + lilyOfTheValley + extensionJPG;
   albumCoverImage = loadImage(albumCoverImagePath);
   //
   Float smallerAlbumCoverDimension = (albumCoverWidth < albumCoverHeight) ? albumCoverWidth : albumCoverHeight;
-  Float albumCoverImageWidthPixel = 700.0;
-  Float albumCoverImageHeightPixel = 500.0;
+  Float albumCoverImageWidthPixel = 400.0;                      //figure out later
+  Float albumCoverImageHeightPixel = 300.0;
   Float albumCoverAspectRatio = albumCoverImageWidthPixel/albumCoverImageHeightPixel;
   Float largerAlbumCoverDimension = smallerAlbumCoverDimension*albumCoverAspectRatio;
   if ( albumCoverWidth < largerAlbumCoverDimension) {
@@ -72,12 +77,10 @@ void setup() {
   };
 albumCoverWidthAdjusted = largerAlbumCoverDimension;
 albumCoverHeightAdjusted = smallerAlbumCoverDimension;
-*/
-  //
-  String[] fontList = PFont.list();
-  printArray(fontList);
-  size= 40;
-  generalFont = createFont("Consolas", size);
+// 
+albumCoverLEFT = albumCoverX;
+albumCoverCENTERED = albumCoverX + (albumCoverWidth - albumCoverWidthAdjusted)/2;
+albumCoverRight = albumCoverX + albumCoverWidth - albumCoverWidthAdjusted;
   //
   //Populate
   backgroundX = appWidth*0;
@@ -168,76 +171,28 @@ void draw () {
   //
   fill(pink);
   rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
+  image(albumCoverImage, albumCoverCENTERED, albumCoverY, albumCoverWidthAdjusted, albumCoverHeightAdjusted);
   //
-  fill(pink);
-  rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight);
-  /*if (mouseX> playButtonX && mouseX<playButtonX+playButtonWidth && mouseY>playButtonY && mouseY<playButtonY+playButtonHeight) {
-   fill(white);
-   rect(playButtonX+playButtonWidth*1/12, playButtonY+playButtonHeight*0.5/6, playButtonWidth*7.5/8, playButtonHeight);  //Change variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
+  /*fill(pink);
   //
   fill(pink);
   rect(progressBarX, progressBarY, progressBarWidth, progressBarHeight);
-  /*if (mouseX> progressBarX && mouseX<progressBarX+progressBarWidth && mouseY>progressBarY && mouseY<progressBarY+progressBarHeight) {
-   fill(white);
-   rect(progressBarX+progressBarWidth*1/12, progressBarY+progressBarHeight*0.5/6, progressBarWidth*7.5/8, progressBarHeight); //Change variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
   //
   fill(pink);
   rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
-  /*if (mouseX> backButtonX&& mouseX<backButtonX+backButtonWidth && mouseY>backButtonY && mouseY<backButtonY+backButtonHeight) {
-   fill(darkPink);
-   rect(backButtonX+backButtonWidth*1/12, backButtonY+backButtonHeight*0.5/6, backButtonWidth*7.5/8, backButtonHeight); //Change variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
   //
   fill(pink);
   rect(nextButtonX, nextButtonY, nextButtonWidth, nextButtonHeight);
-  /*if (mouseX> nextButtonX && mouseX<nextButtonX+nextButtonWidth && mouseY>nextButtonY && mouseY<nextButtonY+nextButtonHeight) {
-   fill(darkPink);
-   rect(nextButtonX+nextButtonWidth*1/12, nextButtonY+nextButtonHeight*0.5/6, nextButtonWidth*7.5/8, nextButtonHeight); //Change variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
   //
   fill(pink);
   rect(playlistNameX, playlistNameY, playlistNameWidth, playlistNameHeight);
-  /*if (mouseX> playlistNameX && mouseX<playlistNameX+playlistNameWidth && mouseY>playlistNameY && mouseY<playlistNameY+ playlistNameHeight) {
-   fill(darkPink);
-   rect(playlistNameX+playlistNameWidth*1/12, playlistNameY+ playlistNameHeight*0.5/6, playlistNameWidth*7.5/8,  playlistNameHeight); //Change variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
   //
   fill(pink);
   rect(nameOfSongX, nameOfSongY, nameOfSongWidth, nameOfSongHeight);
-  /*if (mouseX> nameOfSongX && mouseX<nameOfSongX+nameOfSongWidth && mouseY>nameOfSongY && mouseY<nameOfSongY+nameOfSongHeight) {
-   fill(darkPink);
-   rect(nameOfSongX+nameOfSongWidth*1/12, nameOfSongY+nameOfSongHeight*0.5/6, nameOfSongWidth*7.5/8, nameOfSongHeight); //Change variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
   //
   fill(pink);
   rect(artistNameX, artistNameY, artistNameWidth, artistNameHeight);
-  /*if (mouseX> artistNameX && mouseX<artistNameX+artistNameWidth && mouseY>artistNameY && mouseY<artistNameY+artistNameHeight) {
-   fill(darkPink);
-   rect(artistNameX+artistNameWidth*1/12, artistNameY+artistNameHeight*0.5/6, artistNameWidth*7.5/8, artistNameHeight); //Change variables later
-   fill(foregroundColour);
-   } else {
-   fill(pink);
-   */
+  */
 } // End Draw
 //
 void keyPressed () {

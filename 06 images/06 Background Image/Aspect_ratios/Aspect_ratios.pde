@@ -19,6 +19,20 @@ void setup () {
   String pathway = "../../../Images/";
   String albumCoverImagePath = pathway + lilyOfTheValley + extensionJPG;
   albumCoverImage = loadImage(albumCoverImagePath);
+  // for later
+  /*
+  String  blueDaisy = "blue-flowers-blue-daisy-66102ffb39d9a";
+  String extensionJPG = ".jpg";
+  String pathway = "../../../Images/";
+  String albumCoverImagePath = pathway + blueDaisy + extensionJPG;
+  albumCoverImage = loadImage(albumCoverImagePath);
+  //
+  String japaneseSnowbell = "pink-japanese-snowbell-flowers-royalty-free-image-1682008905";
+  String extensionJPG = ".jpg";
+  String pathway = "../../../Images/";
+  String albumCoverImagePath = pathway + japaneseSnowbell + extensionJPG;
+  albumCoverImage = loadImage(albumCoverImagePath);
+  */
   //
   Float smallerAlbumCoverDimension = (albumCoverWidth < albumCoverHeight) ? albumCoverWidth : albumCoverHeight;
   Float albumCoverImageWidthPixel = 700.0;
@@ -34,12 +48,16 @@ void setup () {
 albumCoverWidthAdjusted = largerAlbumCoverDimension;
 albumCoverHeightAdjusted = smallerAlbumCoverDimension;
 //
+albumCoverLEFT = albumCoverX;
+albumCoverCENTERED = albumCoverX + (albumCoverWidth - albumCoverWidthAdjusted)/2;
+albumCoverRight = albumCoverX + albumCoverWidth - albumCoverWidthAdjusted;
+//
 rect(albumCoverX, albumCoverY, albumCoverWidth, albumCoverHeight);
 }
 //end setup
 //
 void draw() {
-  image( albumCoverImage, albumCoverX, albumCoverY, albumCoverWidthAdjusted, albumCoverHeightAdjusted);
+  image( albumCoverImage, albumCoverCENTERED, albumCoverY, albumCoverWidthAdjusted, albumCoverHeightAdjusted);
 }
 //end draw
 //
