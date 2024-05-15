@@ -47,7 +47,7 @@ void draw() {
   if ( playList[currentSong].isLooping() && playList[currentSong].loopCount()!=-1 ) println("There are", playList[currentSong].loopCount(), "loops left.");
   //
   if (playList[currentSong].isPlaying() ) {
-  } else if (.length() < 160000) {
+  } else if (playList[currentSong].length() < 160000) {
     playList[currentSong].rewind();
   {
   } else if (!playList[currentSong].isPlaying() && ( playList[currentSong].position() > playList[currentSong].length()* 0.75) ) {
