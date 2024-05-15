@@ -18,7 +18,7 @@ int appWidth, appHeight;
 //
 void setup() {
   //Display
-  //size(600, 400);
+  //size();
   fullScreen();
   appWidth = displayWidth;
   appHeight = displayHeight;
@@ -42,7 +42,6 @@ void setup() {
 //
 void draw() {
   println( "Song Position", playList[currentSong].position(), "Song Length", playList[currentSong].length() );
-  //playList[0].loop(0);
   //
   if (!playList[currentSong].isPlaying() ) println ("Nothing is playing, pick a song");
   if ( playList[currentSong].isLooping() && playList[currentSong].loopCount()!=-1 ) println("There are", playList[currentSong].loopCount(), "loops left.");
@@ -60,6 +59,6 @@ void keyPressed() {
 } //End keyPressed
 //
 void mousePressed() {
-} //End mousPressed
+} //End mousePressed
 //
 //End MAIN Program
