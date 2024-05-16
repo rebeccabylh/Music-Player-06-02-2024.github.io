@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 // Minim Library
 //
-//Global Variables
+//Global Variables 
 Minim minim;
 int numberSoundEffects = 4;
 int numberMusicSongs = 8;
@@ -46,12 +46,20 @@ void draw() {
   if (!playList[currentSong].isPlaying() ) println ("Nothing is playing, pick a song");
   if ( playList[currentSong].isLooping() && playList[currentSong].loopCount()!=-1 ) println("There are", playList[currentSong].loopCount(), "loops left.");
   //
-  if (playList[currentSong].isPlaying() ) {
-  } else if (playList[currentSong].length() < 160000) {
-    playList[currentSong].rewind();
-  {
-  } else if (!playList[currentSong].isPlaying() && ( playList[currentSong].position() > playList[currentSong].length()* 0.75) ) {
+ if ( playList[currentSong].isPlaying() ) {
+  } else if ( playList[currentSong].length() < 160000 ) {
+    playList[currentSong].rewind(); 
+  } else if ( !playList[currentSong].isPlaying()  && ( playList[currentSong].position() > playList[currentSong].length()*0.75 ) ) { 
+    playList[currentSong].rewind(); 
+    //
+     currentSong = currentSong + 1;
+     playList[currentSong].play();
+  } else {
   }
+   if ( playList[currentSong].isPlaying() ) {
+   } else {
+   playList[currentSong].rewind();
+   }
   //
 } //End draw
 //
