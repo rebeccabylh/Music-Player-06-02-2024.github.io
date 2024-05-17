@@ -52,7 +52,6 @@ void draw() {
   } else if ( !playList[currentSong].isPlaying()  && ( playList[currentSong].position() > playList[currentSong].length()*0.75 ) ) {
     playList[currentSong].rewind();
     //
-    /*
     currentSong = currentSong + 1;
     playList[currentSong].play();
   } else {
@@ -74,12 +73,27 @@ void draw() {
 } //End draw
 //
 void keyPressed() {
-  if (key=='P'|| key=='p') {
-    if (playList[currentSong].isPlaying() ) {
-      playList[currentSong].play();
+  if ( key=='P' || key=='p' ) { 
+    if ( playList[currentSong].isPlaying() ) { 
+      playList[currentSong].pause(); 
     } else {
-      playList[currentSong].pause();
+      playList[currentSong].play(); 
     }
+  } 
+  //
+  if ( key=='L' || key=='l' ) {
+    playList[currentSong].loop(1);
+    looping = true;
+  }
+  //
+  if ( key=='I' || key=='i' ) {
+    playList[currentSong].loop();
+    looping = true;
+  }
+  if ( key=='S' || key=='s' ) {
+    playList[currentSong].pause();
+    playList[currentSong].rewind();
+    looping = false;
   }
 } //End keyPressed
 //
