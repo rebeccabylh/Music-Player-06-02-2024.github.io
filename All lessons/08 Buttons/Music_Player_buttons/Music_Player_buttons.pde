@@ -10,7 +10,7 @@ import ddf.minim.ugens.*;
 Minim minim;
 int numberSoundEffects = 4;
 int numberMusicSongs = 8;
-AudioPlayer[] playList;
+AudioPlayer[] playList = new AudioPlayer[1];
 AudioPlayer[] soundEffects;
 int currentSong = 0;
 //
@@ -60,44 +60,41 @@ void draw() {
   } else {
     playList[currentSong].rewind();
   }
-  
-  if (key=='L'|| key=='l') { playList[currentSong].loop(1);
-  }
-  if (key=='I'|| key=='i') { playList[currentSong].loop();
+}
+//End draw
   //
-  if(key=='S'|| key=='s'){
-    playList[currentSong].pause();
-    playList[currentSong].rewind();
-  }
-  //
-} //End draw
-//
-void keyPressed() {
-  if ( key=='P' || key=='p' ) { 
-    if ( playList[currentSong].isPlaying() ) { 
-      playList[currentSong].pause(); 
-    } else {
-      playList[currentSong].play(); 
+  void keyPressed() {
+    if ( key=='P' || key=='p' ) {
+      if ( playList[currentSong].isPlaying() ) {
+        playList[currentSong].pause();
+      } else {
+        playList[currentSong].play();
+      }
     }
-  } 
+    //
+    if ( key=='L' || key=='l' ) {
+      playList[currentSong].loop(1);
+      looping = true;
+    }
+    //
+    if ( key=='I' || key=='i' ) {
+      playList[currentSong].loop();
+      looping = true;
+    }
+    if ( key=='S' || key=='s' ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      looping = false;
+    }
+    //
+    if ( key=='R' || key=='r') playList[0].skip(4000);
+    //
+    //int skip = 4000;
+    //
+    if  (key=='F' || key=='f') playList[0].skip(-1000); 
+    } //End keyPressed
   //
-  if ( key=='L' || key=='l' ) {
-    playList[currentSong].loop(1);
-    looping = true;
-  }
+  void mousePressed() {
+  } //End mousePressed
   //
-  if ( key=='I' || key=='i' ) {
-    playList[currentSong].loop();
-    looping = true;
-  }
-  if ( key=='S' || key=='s' ) {
-    playList[currentSong].pause();
-    playList[currentSong].rewind();
-    looping = false;
-  }
-} //End keyPressed
-//
-void mousePressed() {
-} //End mousePressed
-//
-//End MAIN Program
+  //End MAIN Program
