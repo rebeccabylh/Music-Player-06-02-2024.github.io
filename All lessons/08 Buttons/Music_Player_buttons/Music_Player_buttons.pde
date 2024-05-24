@@ -88,9 +88,6 @@ void draw() {
     }
     //
     if ( key=='R' || key=='r') playList[0].skip(4000);
-    //
-    //int skip = 4000;
-    //
     if  (key=='F' || key=='f') playList[0].skip(-1000); 
     } //End keyPressed
   //
