@@ -61,6 +61,11 @@ void draw() {
     playList[currentSong].rewind();
   }
 }
+//
+/*
+if (playList[currentSong].isMuted() ) println("You're on mute bud");
+*/
+//
 //End draw
   //
   void keyPressed() {
@@ -88,7 +93,16 @@ void draw() {
     }
     //
     if ( key=='R' || key=='r') playList[0].skip(4000);
-    if  (key=='F' || key=='f') playList[0].skip(-1000); 
+    if  (key=='F' || key=='f') playList[0].skip(-1000);
+    //
+    if (key== 'M' || key=='m') {
+      if ( playList[currentSong].isMuted() ) {
+        playList[currentSong].unmute();
+      } else {
+        playList[currentSong].mute();
+      }
+    }
+    //
     } //End keyPressed
   //
   void mousePressed() {
