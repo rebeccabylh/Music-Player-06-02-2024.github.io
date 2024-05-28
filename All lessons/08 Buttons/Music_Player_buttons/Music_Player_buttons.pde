@@ -23,6 +23,8 @@ PFont generalFont;
 color black = #000000;
 color pink = #FFEDF8;
 //
+int size;
+//
 void setup() {
   //Display
   //size();
@@ -73,6 +75,7 @@ void draw() {
 //
  //if ( playList[currentSong].isMuted() ) println ("You're on mute bud");
 //
+fill(black);
   rect(width*1/4, height*0, width*1/2, height*1/10);
   fill(pink); 
   textAlign (CENTER, CENTER);
