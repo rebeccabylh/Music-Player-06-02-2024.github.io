@@ -13,7 +13,7 @@ int numberMusicSongs = 8;
 AudioPlayer[] playList = new AudioPlayer[1];
 AudioPlayer[] soundEffects;
 int currentSong = 0;
-AudioMetaData songMetaData1;
+AudioMetaData[] playListMetaData1;
 //
 int appWidth, appHeight;
 //
@@ -49,6 +49,7 @@ void setup() {
   String pathMusic = sketchPath( pathwayMusic + JulyJohnPatitucci + extension );
   soundEffects[0] = minim.loadFile( pathQuitButtonSound );
   playList[0] =  minim.loadFile( pathMusic );
+  playListMetaData[0] = playList[0].songMetaData();
   //
 } //End setup
 //
@@ -73,14 +74,15 @@ void draw() {
     playList[currentSong].rewind();
   }
 //
- //if ( playList[currentSong].isMuted() ) println ("You're on mute bud");
+ if ( playList[currentSong].isMuted() ) println ("You're on mute bud");
 //
 fill(black);
   rect(width*1/4, height*0, width*1/2, height*1/10);
   fill(pink); 
   textAlign (CENTER, CENTER);
   textFont(generalFont, 40);
-  text(songMetaData1.title(), width*1/4, height*0, width*1/2, height*1/10);
+  println(playListMetaData[0]):
+  //text(songMetaData1.title(), width*1/4, height*0, width*1/2, height*1/10);
   fill(255);
 //
 }
