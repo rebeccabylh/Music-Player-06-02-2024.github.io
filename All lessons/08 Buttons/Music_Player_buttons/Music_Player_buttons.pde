@@ -79,7 +79,7 @@ fill(black);
   rect(width*1/4, height*0, width*1/2, height*1/10);
   fill(pink); 
   textAlign (CENTER, CENTER);
-  textFont(generalFont, 45);
+  textFont(generalFont, 40);
   text(songMetaData1.title(), width*1/4, height*0, width*1/2, height*1/10);
   fill(255);
 //
