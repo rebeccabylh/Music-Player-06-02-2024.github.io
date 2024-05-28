@@ -13,8 +13,15 @@ int numberMusicSongs = 8;
 AudioPlayer[] playList = new AudioPlayer[1];
 AudioPlayer[] soundEffects;
 int currentSong = 0;
+AudioMetaData songMetaData1;
 //
 int appWidth, appHeight;
+//
+Boolean looping=false;
+//
+PFont generalFont;
+color black = #000000;
+color pink = #FFEDF8;
 //
 void setup() {
   //Display
@@ -23,7 +30,10 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
-  println(displayInstructions);
+  //println(displayInstructions);
+  //
+  size= (appWidth > appHeight) ? appHeight : appWidth;
+  generalFont = createFont("Consolas", size);
   //
   minim = new Minim(this);
   String pathwaySoundEffects = "../Songs/";
@@ -60,12 +70,17 @@ void draw() {
   } else {
     playList[currentSong].rewind();
   }
+//
+ //if ( playList[currentSong].isMuted() ) println ("You're on mute bud");
+//
+  rect(width*1/4, height*0, width*1/2, height*1/10);
+  fill(pink); 
+  textAlign (CENTER, CENTER);
+  textFont(generalFont, 45);
+  text(songMetaData1.title(), width*1/4, height*0, width*1/2, height*1/10);
+  fill(255);
+//
 }
-//
-/*
-if (playList[currentSong].isMuted() ) println("You're on mute bud");
-*/
-//
 //End draw
   //
   void keyPressed() {
