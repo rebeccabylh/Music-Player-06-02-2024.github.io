@@ -11,9 +11,9 @@ Minim minim;
 int numberSoundEffects = 4;
 int numberMusicSongs = 8;
 AudioPlayer[] playList = new AudioPlayer[1];
-AudioPlayer[] soundEffects;
+AudioPlayer[] soundEffects = new AudioPlayer [1];
 int currentSong = 0;
-AudioMetaData[] playListMetaData1;
+AudioMetaData[] playListMetaData = new AudioMetaData [1];
 //
 int appWidth, appHeight;
 //
@@ -32,24 +32,24 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   String displayInstructions = ( appWidth >= appHeight ) ? "Good To Go" : "Bruh, turn your phone";
-  //println(displayInstructions);
+  println(displayInstructions);
   //
   size= (appWidth > appHeight) ? appHeight : appWidth;
   generalFont = createFont("Consolas", size);
   //
   minim = new Minim(this);
-  String pathwaySoundEffects = "../Songs/";
-  String pathwayMusic = "../Songs/";
+  String pathwaySoundEffects = "../../../Songs/";
+  String pathwayMusic = "../../../Songs/";
   String quitButtonSound = "Daytime Forrest Bonfire";
-  String JulyJohnPatitucci = "July";
+  String PuttingOnTheRitz = "Putting On The Ritz - Freedom Trail Studio";
   String extension = ".mp3";
   //println ( pathwaySoundEffects+quitButtonSound+extension );
-  //println ( "Relative Pathway:", pathwayMusic+JulyJohnPatitucci+extension );
+  //println ( "Relative Pathway:", pathwayMusic+PuttingOnTheRitz+extension );
   String pathQuitButtonSound = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
-  String pathMusic = sketchPath( pathwayMusic + JulyJohnPatitucci + extension );
+  String pathMusic = sketchPath( pathwayMusic + PuttingOnTheRitz + extension );
   soundEffects[0] = minim.loadFile( pathQuitButtonSound );
   playList[0] =  minim.loadFile( pathMusic );
-  playListMetaData[0] = playList[0].songMetaData();
+  playListMetaData[0] = playList[0].getMetaData();
   //
 } //End setup
 //
@@ -76,14 +76,15 @@ void draw() {
 //
  if ( playList[currentSong].isMuted() ) println ("You're on mute bud");
 //
-fill(black);
+fill(pink);
   rect(width*1/4, height*0, width*1/2, height*1/10);
-  fill(pink); 
-  textAlign (CENTER, CENTER);
-  textFont(generalFont, 40);
-  println(playListMetaData[0]):
-  //text(songMetaData1.title(), width*1/4, height*0, width*1/2, height*1/10);
-  fill(255);
+  fill(black); 
+  int size = 40; 
+  textFont(generalFont, size);
+  //printArray(playListMetaData[0]);
+  println("Variable is:", playListMetaData[0].title());
+  text(playListMetaData[0].title(), width*1/4, height*0, width*1/2, height*1/10);
+  fill(black);
 //
 }
 //End draw
