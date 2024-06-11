@@ -8,8 +8,8 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim;
-int numberSoundEffects = 4;
-int numberMusicSongs = 8;
+int numberSoundEffects = 2;
+int numberMusicSongs = 3;
 AudioPlayer[] playList = new AudioPlayer[1];
 AudioPlayer[] soundEffects = new AudioPlayer [1];
 int currentSong = 0;
@@ -42,11 +42,15 @@ void setup() {
   String pathwayMusic = "../../../Songs/";
   String quitButtonSound = "Daytime Forrest Bonfire";
   String PuttingOnTheRitz = "Putting On The Ritz - Freedom Trail Studio";
+  String July = "July - John Patitucci";
+  String CamptownRaces = "Camptown Races - Freedom Trail Studio";
   String extension = ".mp3";
   //println ( pathwaySoundEffects+quitButtonSound+extension );
   //println ( "Relative Pathway:", pathwayMusic+PuttingOnTheRitz+extension );
   String pathQuitButtonSound = sketchPath( pathwaySoundEffects + quitButtonSound + extension );
   String pathMusic = sketchPath( pathwayMusic + PuttingOnTheRitz + extension );
+  String pathMusic = sketchPath( pathwayMusic + July + extension );
+  String pathMusic = sketchPath( pathwayMusic + CamptownRaces + extension );
   soundEffects[0] = minim.loadFile( pathQuitButtonSound );
   playList[0] =  minim.loadFile( pathMusic );
   playListMetaData[0] = playList[0].getMetaData();
@@ -85,6 +89,17 @@ fill(pink);
   println("Variable is:", playListMetaData[0].title());
   text(playListMetaData[0].title(), width*1/4, height*0, width*1/2, height*1/10);
   fill(black);
+//
+/*if ( playList[currentSong].isPlaying() ) {
+    //Empty IF, TRUE
+  } else {
+    //currentSong at end of FILE
+    playList[currentSong].rewind();
+    currentSong = currentSong + 1;
+    elements and 1-index value until playlist done, then recopy array to make new shuffle and not repeat songs
+    playList[currentSong].play();
+  }
+  */
 //
 }
 //End draw
